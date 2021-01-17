@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\CategoriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,4 @@ Route::get('/job.html', [JobController::class, 'index']);
 Route::get('/search', [JobController::class, 'search']);
 Route::get('/about.html', [AboutController::class, 'index']); 
 Route::get('/searchById', [JobController::class, 'searchById']);
-Route::get('categories.html', [JobController::class, 'searchById']); 
+Route::get('categories.html', [CategoriesController::class, 'index']); 

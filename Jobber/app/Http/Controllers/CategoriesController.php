@@ -9,13 +9,19 @@ class CategoriesController extends Controller
 {
     public function index()
     {
-        //Get data from DB in here and pass it to the view
-        /* $results = DB::select(DB::raw("SELECT j.title, comp.name FROM jobs as j
-        INNER JOIN companies as comp
-        ON j.company_id = comp.id")); */
+        $resultsCities = DB::select(DB::raw("Select city.name from jobs as j
+        inner join cities as city
+        on j.city_id = city.id"));
+
+        $resultsCompanies = DB::select(DB::raw("Select company.name from jobs
+        inner join companies as company
+        on jobs.company_id = company.id"));
+
 
         return view('categories.categories', [
-            'title' => 'Here you will find your next job!'
+            'title' => 'Check out all the jobs based on cities and companies!',
+            'resultsCities' => $resultsCities,
+            'resultsCompanies' => $resultsCompanies
         ]);
     }
 }
