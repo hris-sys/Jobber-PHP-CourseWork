@@ -17,6 +17,7 @@
         </form>
     </div>
     @endif
+
     <div class="container d-flex">
         @foreach ($results as $classRes)
 
@@ -24,8 +25,12 @@
 
         @if ($key == "title")
         @php $currentTitle = $value; @endphp
-        @elseif ($key == "name")
+        @elseif ($key == "cityName")
         @php $currentCity = $value; @endphp
+        @elseif ($key == "jobId")
+        @php $currentJobId = $value; @endphp
+        @elseif ($key == "companyName")
+        @php $currentCompany = $value; @endphp
         @elseif ($key == "image")
         @php $currentImage = $value; @endphp
         @else
@@ -37,10 +42,11 @@
         <div class="card" style="width: 18rem;">
             <img src="{{$currentImage}}" class="card-img-top" alt="..." />
             <div class="card-body">
-                <h5 class="card-title">{{$currentTitle}}</h5>
-                <p class="card-text">{{$currentContent}}t</p>
-                <p class="card-text">{{$currentCity}}</p>
-                <a href="#" class="btn btn-primary">Visit</a>
+                <p class="card-title text-center h2">{{$currentTitle}}</h5>
+                <p class="card-title text-center h3">{{$currentCompany}}</h5>
+                <p class="card-text text-center h6">{{$currentContent}}</p>
+                <p class="card-text text-center h5">{{$currentCity}}</p>
+                <a href="/searchById?search={{$currentJobId}}" class="btn btn-primary col-md">Visit</a>
             </div>
         </div>
 

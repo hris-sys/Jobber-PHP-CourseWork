@@ -20,4 +20,5 @@ Route::get('/', [IndexController::class, 'index']);
 Route::get('/index.html', [IndexController::class, 'index']);
 Route::get('/job.html', [JobController::class, 'index']);
 Route::get('/search', [JobController::class, 'search']);
-Route::get('/about.html', [AboutController::class, 'index']);
+Route::get('/about.html', [AboutController::class, 'index']); 
+Route::get('/searchById', [JobController::class, 'searchById']);

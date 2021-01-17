@@ -19,11 +19,28 @@ class JobController extends Controller
         ]);
     }
 
+    public function searchById(Request $request)
+    {
+        $id = $request->get('search');
+
+        $results = DB::select(DB::raw("SELECT jobs.title, cities.name AS 'cityName', jobs.id AS 'jobId', companies.name AS 'companyName', jobs.content, jobs.image FROM jobs
+        INNER JOIN cities ON
+        jobs.city_id = cities.id
+        Inner Join companies on
+        jobs.company_id = companies.id
+        WHERE jobs.id = $id"), array(
+            'id' => $id,
+        ));
+
+        var_dump($results);
+        
+        echo ("Wassup");
+    }
 
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $results = DB::select(DB::raw("SELECT jobs.title, companies.name, cities.name, jobs.content, jobs.image FROM jobs
+        $results = DB::select(DB::raw("SELECT jobs.title, cities.name AS 'cityName', jobs.id AS 'jobId', companies.name AS 'companyName', jobs.content, jobs.image FROM jobs
         INNER JOIN cities ON
         jobs.city_id = cities.id
         Inner Join companies on
