@@ -32,9 +32,12 @@ class JobController extends Controller
             'id' => $id,
         ));
 
-        var_dump($results);
-        
-        echo ("Wassup");
+        return view(
+            'job.jobIndexSearchById',
+            [
+                'results' => $results,
+            ]
+        );
     }
 
     public function search(Request $request)
