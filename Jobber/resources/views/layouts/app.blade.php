@@ -21,6 +21,7 @@
         <div class="inner">
             <a href="index.html" class="logo">Jobber</a>
             <nav id="nav">
+                <a href="categories.html">Categories</a>
                 <a href="job.html">Job Offers</a>
                 <a href="about.html">About</a>
             </nav>
