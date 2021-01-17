@@ -43,7 +43,7 @@
                 <div class="col-sm-8">
                     <p class="card-title h1 text-center mb-5">{{$currentTitle}}</h5>
                     <p class="card-title h2 text-center mb-5">{{$currentCompany}}</h5>
-                    <p class="card-text h3 text-center mb-5">{{$currentContent}}</p>
+                    <p class="card-text h3 text-center mb-5" id="content-ckeditor">{{!!$currentContent!!}}</p>
                     <p class="card-text h4 text-center mb-5">{{$currentCity}}</p>
                 </div>
                 <div class="col-sm-4">
@@ -54,4 +54,12 @@
             @endforeach
         </div>
     </div>
-    @endsection
+</div>
+@endsection
+
+@section('scripts')
+<script>
+    let contentCk = document.getElementsByClassName('col-sm-8');
+    console.log(contentCk);
+</script>
+@endsection
