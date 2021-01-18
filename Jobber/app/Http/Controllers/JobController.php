@@ -43,7 +43,7 @@ class JobController extends Controller
     public function search(Request $request)
     {
         $search = $request->get('search');
-        $results = DB::select(DB::raw("SELECT jobs.title, cities.name AS 'cityName', jobs.id AS 'jobId', companies.name AS 'companyName', jobs.content, jobs.image FROM jobs
+        $results = DB::select(DB::raw("SELECT jobs.title, cities.name AS 'cityName', jobs.id AS 'jobId', companies.name AS 'companyName', jobs.updated_at AS 'jobUpdate', jobs.content, jobs.image FROM jobs
         INNER JOIN cities ON
         jobs.city_id = cities.id
         Inner Join companies on

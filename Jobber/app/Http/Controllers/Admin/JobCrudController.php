@@ -81,7 +81,7 @@ class JobCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::setFromDb(); // columns
+       CRUD::setFromDb(); // columns
 
         $this->crud->set('show.setFromDb', false);
         $this->crud->addColumns($this->getFieldsData(TRUE));

@@ -27,6 +27,8 @@
         @php $currentTitle = $value; @endphp
         @elseif ($key == "cityName")
         @php $currentCity = $value; @endphp
+        @elseif ($key == "jobUpdate")
+        @php $currentJobUpdate = $value; @endphp
         @elseif ($key == "jobId")
         @php $currentJobId = $value; @endphp
         @elseif ($key == "companyName")
@@ -46,6 +48,7 @@
                 <p class="card-title text-center h3">{{$currentCompany}}</h5>
                 <p class="card-text text-center h6">{{$currentContent}}</p>
                 <p class="card-text text-center h5">{{$currentCity}}</p>
+                <p class="card-text text-center h5">Last updated at: {{$currentJobUpdate}}</p>
                 <a href="/searchById?search={{$currentJobId}}" class="btn btn-primary col-md">Visit</a>
             </div>
         </div>

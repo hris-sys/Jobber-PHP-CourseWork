@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('title', 'Categories')
-
 @section('content')
 
 <div class="inner">

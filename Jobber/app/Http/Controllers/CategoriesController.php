@@ -16,8 +16,7 @@ class CategoriesController extends Controller
         $resultsCompanies = DB::select(DB::raw("Select company.name from jobs
         inner join companies as company
         on jobs.company_id = company.id"));
-
-
+        
         return view('categories.categories', [
             'title' => 'Check out all the jobs based on cities and companies!',
             'resultsCities' => $resultsCities,
