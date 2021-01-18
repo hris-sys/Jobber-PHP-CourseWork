@@ -9,11 +9,11 @@ class CategoriesController extends Controller
 {
     public function index()
     {
-        $resultsCities = DB::select(DB::raw("Select city.name from jobs as j
+        $resultsCities = DB::select(DB::raw("Select distinct city.name from jobs as j
         inner join cities as city
         on j.city_id = city.id"));
 
-        $resultsCompanies = DB::select(DB::raw("Select company.name from jobs
+        $resultsCompanies = DB::select(DB::raw("Select distinct company.name from jobs
         inner join companies as company
         on jobs.company_id = company.id"));
         
